@@ -1,6 +1,13 @@
 FROM node:18
+
 WORKDIR /app
-COPY . .
+
+COPY package*.json ./
+
 RUN npm install
-EXPOSE 5433
-CMD ["npm", "start"]
+
+COPY . .
+
+EXPOSE 3000
+
+CMD ["npm", "run", "dev"]
